@@ -7,7 +7,8 @@ import com.app.pojo.Employee;
 
 public interface IEmpService {
   public List<Employee> getallEmp();
-  public Employee createEmp(Employee emp);
+  public void createEmp(Employee emp);
   public List<Employee> removeEmp(int id);
+  public List<Employee> updateEmp(Employee e);
 }
  

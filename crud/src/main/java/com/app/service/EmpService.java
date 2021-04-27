@@ -23,9 +23,9 @@ public class EmpService implements IEmpService {
 	}
 
 	@Override
-	public Employee createEmp(Employee emp) {
-		Employee e = repo.save(emp);
-		return e;
+	public void createEmp(Employee emp) {
+		 repo.save(emp);
+		
 	}
 
 	@Override
@@ -33,6 +33,13 @@ public class EmpService implements IEmpService {
 		// TODO Auto-generated method stub
 	    repo.deleteById(id);
 	  return repo.findAll();
+	}
+
+	
+	@Override
+	public List<Employee> updateEmp(Employee e) {
+		     repo.save(e);
+			return repo.findAll();
 	}
 
 }

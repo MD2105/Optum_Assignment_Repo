@@ -10,13 +10,20 @@ import {MatMenuModule} from '@angular/material/menu';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatButtonModule} from '@angular/material/button';
 import { AddempComponent } from './addemp/addemp.component';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HomeComponent } from './home/home.component';
+import {MatTableModule} from '@angular/material/table';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     EmpoloyeeComponent,
-    AddempComponent
+    AddempComponent,
+    HomeComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
@@ -24,7 +31,11 @@ import { AddempComponent } from './addemp/addemp.component';
     BrowserAnimationsModule,
     MatMenuModule,
     MatButtonModule,
-    MatToolbarModule
+    MatToolbarModule,
+    FormsModule,  
+    ReactiveFormsModule,  
+    HttpClientModule,
+    MatTableModule
   ],
   providers: [],
   bootstrap: [AppComponent]

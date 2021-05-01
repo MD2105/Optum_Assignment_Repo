@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.app.customException.EmployeeNotFound;
 import com.app.pojo.Employee;
 import com.app.repo.EmployeeRepo;
 @Service
@@ -40,6 +41,15 @@ public class EmpService implements IEmpService {
 	public List<Employee> updateEmp(Employee e) {
 		     repo.save(e);
 			return repo.findAll();
+	}
+
+	@Override
+	public Employee getEmployeeDetails(int emp_id) {
+		Optional<Employee> optionalEmp = repo.findById(emp_id);
+		if (optionalEmp.isPresent())
+			return optionalEmp.get();
+		// if product is not found : throw custom exception
+		throw new EmployeeNotFound("Product Not Found : Invalid ID " + emp_id);
 	}
 
 }

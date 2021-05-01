@@ -1,3 +1,4 @@
+import { UpdateEmpComponent } from './update-emp/update-emp.component';
 import { HomeComponent } from './home/home.component';
 import { AddempComponent } from './addemp/addemp.component';
 import { EmpoloyeeComponent } from './empoloyee/empoloyee.component';
@@ -16,6 +17,10 @@ const routes: Routes = [
   {
     path:'addemp',
     component:AddempComponent
+  },
+  {
+    path:'update',
+    component:UpdateEmpComponent
   }
 ];
 

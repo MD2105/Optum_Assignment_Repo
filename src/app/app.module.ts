@@ -1,6 +1,6 @@
+import { EmpdataService } from './empdata.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -15,7 +15,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HomeComponent } from './home/home.component';
 import {MatTableModule} from '@angular/material/table';
 import { FooterComponent } from './footer/footer.component';
-
+import { UpdateEmpComponent } from './update-emp/update-emp.component';
+import {MatSnackBar, MatSnackBarModule} from '@angular/material/snack-bar';
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,7 +24,8 @@ import { FooterComponent } from './footer/footer.component';
     EmpoloyeeComponent,
     AddempComponent,
     HomeComponent,
-    FooterComponent
+    FooterComponent,
+    UpdateEmpComponent
   ],
   imports: [
     BrowserModule,
@@ -35,9 +37,10 @@ import { FooterComponent } from './footer/footer.component';
     FormsModule,  
     ReactiveFormsModule,  
     HttpClientModule,
-    MatTableModule
+    MatTableModule,
+    MatSnackBarModule
   ],
-  providers: [],
+  providers: [EmpdataService,MatSnackBar],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

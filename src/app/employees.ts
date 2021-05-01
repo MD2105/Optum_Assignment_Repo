@@ -1,8 +1,8 @@
 export class Employees {
+    public emp_id!: number;
+       public emp_name!: string;
+       public emp_phone!: number;
     constructor(
-        emp_id:number,
-    emp_name:string,
-    emp_phone:number
+       
     ){}
-    
 }

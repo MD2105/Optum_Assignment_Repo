@@ -10,5 +10,6 @@ public interface IEmpService {
   public void createEmp(Employee emp);
   public List<Employee> removeEmp(int id);
   public List<Employee> updateEmp(Employee e);
+  public Employee getEmployeeDetails(int emp_id);
 }
  

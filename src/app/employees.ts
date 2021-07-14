@@ -3,6 +3,5 @@ export class Employees {
        public emp_name!: string;
        public emp_phone!: number;
     constructor(
-       
     ){}
 }

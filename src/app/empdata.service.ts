@@ -15,10 +15,10 @@ public empRegistration(user:any){
 public getAllEmpdata(){
   return this.http.get("http://localhost:8080/empdata/");
 }
-public removeEmp(id:number){
+public removeEmp(id:number):Observable<any>{
   return this.http.delete("http://localhost:8080/empdata/delete/"+id);
 }
-public empUdaptedata(user:any){
+public empUdaptedata(user:any):Observable<any>{
   return this.http.put("http://localhost:8080/empdata/update",user);
 }
 getEmployee(id: number): Observable<any> {

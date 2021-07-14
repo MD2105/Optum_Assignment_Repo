@@ -17,6 +17,7 @@ import {MatTableModule} from '@angular/material/table';
 import { FooterComponent } from './footer/footer.component';
 import { UpdateEmpComponent } from './update-emp/update-emp.component';
 import {MatSnackBar, MatSnackBarModule} from '@angular/material/snack-bar';
+import {MatPaginatorModule} from '@angular/material/paginator';
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,7 +39,8 @@ import {MatSnackBar, MatSnackBarModule} from '@angular/material/snack-bar';
     ReactiveFormsModule,  
     HttpClientModule,
     MatTableModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatPaginatorModule
   ],
   providers: [EmpdataService,MatSnackBar],
   bootstrap: [AppComponent]

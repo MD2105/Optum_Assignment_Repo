@@ -1,69 +1,40 @@
+
 <navbar></navbar>
-<h1 style="text-align: center; padding-top: 30px;padding-bottom: 40px;">Employee's Data</h1>
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-  </head>
-  <body>
 
-    <div class="container">
-    <table class="table table-hover">
-        <thead class="thead-dark">
-          <tr>
-            <th scope="col">Employee Id</th>
-            <th scope="col">Employee Name</th>
-            <th scope="col">Employee Phone Number</th>
-            <th scope="col">operations</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let emp of allemp">
-            <th scope="row" >{{emp.id}}</th>
-            <td>{{emp.name}}</td>
-            <td>{{emp.phone}}</td>
-            <td><button class="btn btn-primary" (click)="delteEmp(emp.id)">Delete</button>
-            <span>&nbsp;<button class="btn btn-primary" (click)="getEmp(emp)">Update</button></span></td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
+  <div style="margin:20px;"><strong>Search</strong>&nbsp;
+    <input matInput (keyup)="applyFilter($event)" placeholder="Ex Name" #input></div>
+     
+    <div class="mat-elevation-z8">
+  <table mat-table [dataSource]="dataSource">
 
+    <!-- Position Column -->
+    <ng-container matColumnDef="EmployeeId">
+      <th mat-header-cell *matHeaderCellDef> EmployeeId</th>
+      <td mat-cell *matCellDef="let element"> {{element.emp_id}} </td>
+    </ng-container>
 
+    <!-- Name Column -->
+    <ng-container matColumnDef="Employee Name">
+      <th mat-header-cell *matHeaderCellDef> Employee Name </th>
+      <td mat-cell *matCellDef="let element"> {{element.emp_name}} </td>
+    </ng-container>
 
+    <!-- Weight Column -->
+    <ng-container matColumnDef="Employee Number">
+      <th mat-header-cell *matHeaderCellDef> Employee Phone Number </th>
+      <td mat-cell *matCellDef="let element"> {{element.emp_phone}} </td>
+    </ng-container>
 
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="Operations">
+      <th mat-header-cell *matHeaderCellDef> Operation </th>
+      <td mat-cell *matCellDef="let element"> <button mat-raised-button color="accent" (click)="getEmp(element.emp_id)">Update</button> &nbsp;<button mat-raised-button color="warn" (click)="deleteEmp(element.emp_id)">Delete</button></td>
+    </ng-container>
 
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
 
+  <mat-paginator [pageSizeOptions]="[3, 10, 20]" showFirstLastButtons></mat-paginator>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-  </body>
-  <app-footer></app-footer>
-</html>
+</div>
